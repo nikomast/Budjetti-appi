@@ -1,12 +1,11 @@
-// App.js
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import { AuthProvider, useAuth } from './context/AuthContext';
 import LoansPage from './components/Loans/LoansPage';
 import LoginPage from './components/Login';
 import PrivateRoute from './components/PrivateRoute';
 import NotFound from './components/NotFound';
-import Main from './components/Landing'
+import Main from './components/Landing';
 import Budget from './components/Budget/Budget';
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -15,7 +14,8 @@ const AppContent = () => {
   const { loading, currentUser } = useAuth();
 
   if (loading) {
-    return <div className="private-route-container"><div className="loading-message">Loading...</div></div>;  }
+    return <div className="private-route-container"><div className="loading-message">Loading...</div></div>;
+  }
 
   return (
     <>

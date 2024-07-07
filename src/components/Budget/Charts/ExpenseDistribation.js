@@ -51,7 +51,7 @@ const ExpenseDistributionChart = ({ budget }) => {
           plugins: {
             title: {
               display: true,
-              text: 'Percentage of Total Expenses by Category'
+              text: 'Expenses consist of'
             },
             legend: {
                 display: false,

@@ -130,14 +130,14 @@ const Budget = () => {
         <section className="income-section">
           <h2>Your Incomes</h2>
           <Incomes />
-          <div className="chart-section">
-            <h3>Income Distribution</h3>
-            <IncomeDistributionChart budget={{...budget, loanPayments: [{ cost: totalLoanPayments }]}} incomes={incomes} />
-          </div>
           <AddIncome onIncomeAdded={fetchBudget} />
         </section>
         <section className="budget-section">
           <h2>Your Expenses</h2>
+          <div className="chart-section">
+            <h3>Expense Overview</h3>
+            <ExpenseDistributionChart budget={{...budget, loanPayments: [{ cost: totalLoanPayments }]}} />
+        </div>
           <div className="budget-summary">
             {categories.map(category => (
               <div key={category} className="category-section">
@@ -164,9 +164,9 @@ const Budget = () => {
             )}
           </div>
           <AddExpense onExpenseAdded={fetchBudget} />
-          <div className="chart-section">
-            <h3>Expense Overview</h3>
-            <ExpenseDistributionChart budget={{...budget, loanPayments: [{ cost: totalLoanPayments }]}} />
+        <div className="chart-section">
+            <h3>Income Distribution</h3>
+            <IncomeDistributionChart budget={{...budget, loanPayments: [{ cost: totalLoanPayments }]}} incomes={incomes} />
         </div>
         </section>
       </main>

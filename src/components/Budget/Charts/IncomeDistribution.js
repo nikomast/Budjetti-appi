@@ -62,7 +62,7 @@ const IncomeDistributionChart = ({ budget, incomes }) => {
           plugins: {
             title: {
               display: true,
-              text: 'Percentage of Total Income by Category'
+              text: 'Expenditure share of income'
             },
             legend: {
               display: false,
