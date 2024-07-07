@@ -21,8 +21,6 @@ const MainPage = () => {
         <section className="loan-list-section">
           <h2>Your Loans</h2>
           <Loans ref={loansRef} onLoanUpdated={handleLoanAdded} />
-        </section>
-        <section className="add-loan-section">
           <h2>Add a New Loan</h2>
           <AddLoan onLoanAdded={handleLoanAdded} />
         </section>

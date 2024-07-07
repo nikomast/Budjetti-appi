@@ -1,12 +1,13 @@
 .add-income-form {
     display: flex;
     flex-direction: column;
+    padding: 20px;
 }
 
 .add-income-form input {
     padding: 10px;
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 10px;
     margin-bottom: 10px;
 }
 

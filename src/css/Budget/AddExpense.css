@@ -1,5 +1,5 @@
 .add-expense {
-    margin-top: 20px;
+    margin-top: 30px;
   }
   
   .add-expense-form {
@@ -12,7 +12,7 @@
   .add-expense-form input {
     padding: 10px;
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 10px;
     margin-bottom: 10px;
   }
   

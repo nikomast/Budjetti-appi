@@ -6,8 +6,9 @@ import "../../css/Budget/Budget.css";
 import AddExpense from './AddExpense';
 import AddIncome from './AddIncome';
 import Incomes from './Incomes';
-import ExpenseDistributionChart from './Charts/ExpenseDistrubation';
+import ExpenseDistributionChart from './Charts/ExpenseDistribation';
 import IncomeExpenseChart from './Charts/IncomeCharts';
+import IncomeDistributionChart from './Charts/IncomeDistribution';
 
 const Budget = () => {
   const { currentUser } = useAuth();
@@ -122,13 +123,21 @@ const Budget = () => {
   return (
     <div className="main-container">
       <main className="main-content">
+      <div className="IvsE">
+        <h3>Overview of Income's and Expense's</h3>
+        <IncomeExpenseChart budget={{...budget, loanPayments: [{ cost: totalLoanPayments }]}} incomes={incomes} />
+      </div>
         <section className="income-section">
           <h2>Your Incomes</h2>
           <Incomes />
+          <div className="chart-section">
+            <h3>Income Distribution</h3>
+            <IncomeDistributionChart budget={{...budget, loanPayments: [{ cost: totalLoanPayments }]}} incomes={incomes} />
+          </div>
           <AddIncome onIncomeAdded={fetchBudget} />
         </section>
         <section className="budget-section">
-          <h2>Monthly Budget Management</h2>
+          <h2>Your Expenses</h2>
           <div className="budget-summary">
             {categories.map(category => (
               <div key={category} className="category-section">
@@ -158,9 +167,7 @@ const Budget = () => {
           <div className="chart-section">
             <h3>Expense Overview</h3>
             <ExpenseDistributionChart budget={{...budget, loanPayments: [{ cost: totalLoanPayments }]}} />
-            <h3>Income vs Expenses</h3>
-            <IncomeExpenseChart budget={{...budget, loanPayments: [{ cost: totalLoanPayments }]}} incomes={incomes} />
-          </div>
+        </div>
         </section>
       </main>
     </div>

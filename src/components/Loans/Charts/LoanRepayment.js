@@ -7,7 +7,7 @@ Chart.register(...registerables);
 
 const LoanRepaymentChart = ({ loanData }) => {
   const chartData = {
-    labels: loanData[0].forecast.map((_, i) => i + 1),
+    labels: loanData[0].forecast.map((_, i) => i + 0),
     datasets: loanData.map((loan) => ({
       label: loan.name,
       data: loan.forecast,

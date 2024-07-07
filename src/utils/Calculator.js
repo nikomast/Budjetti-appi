@@ -40,6 +40,8 @@ export function calculateLoanRepayment(loans) {
         let forecast = [];
         let log = 0;
         while (information.balance > 0) {
+            information.balance = Math.round(information.balance);
+            forecast.push(information.balance);
             let monthly = 0;
             // Calculate interest
             monthly = information.balance * ((information.interest / 100) / 12);
@@ -53,9 +55,7 @@ export function calculateLoanRepayment(loans) {
             } else {
                 information.balance -= information.minimum;
             }
-            // Save payment
-            information.balance = Math.round(information.balance);
-            forecast.push(information.balance);
+            
             // Ensure loop doesn't run indefinitely
             log += 1;
             if (log > 120) {
@@ -105,6 +105,9 @@ export function calculateAvalancheRepayment(loans, budget) {
                 if (information[i].balance > 0) {
                     allLoansPaidOff = false;
 
+                    information[i].balance = Math.round(information[i].balance);
+                    information[i].forecast.push(information[i].balance);
+
                     let monthlyInterest = Math.round(information[i].balance * ((information[i].interest / 100) / 12));
                     information[i].price += monthlyInterest;
                     information[i].balance += monthlyInterest;
@@ -116,9 +119,6 @@ export function calculateAvalancheRepayment(loans, budget) {
                         information[i].balance -= information[i].minimum;
                         remainingBudget -= information[i].minimum;
                     }
-
-                    information[i].balance = Math.round(information[i].balance);
-                    information[i].forecast.push(information[i].balance);
                 } 
             }
 
