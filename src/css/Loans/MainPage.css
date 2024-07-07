@@ -1,0 +1,67 @@
+/* MainPage.css */
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 90vh;
+    padding-bottom: 100px;
+  }
+  
+  
+  .logout-button:hover {
+    background-color: #0056b3;
+    color: white;
+  }
+  
+  .main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+  }
+  
+  .loan-list-section, .add-loan-section, .calculator-section {
+    width: 90%;
+    margin-bottom: 15px;
+    padding:5px;
+   /* border-radius: 5px;
+    border: 1px solid #ddd;*/
+  }
+  
+  .calculator-section {
+    width: 90%;
+  }
+  
+  .calculator {
+    width: 90%;
+  }
+
+  button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border-radius: 5px;
+    margin: 5px;
+  }
+  
+  button:hover {
+    background-color:#0056b3;
+    color: #fff;
+  }
+
+  /* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+  

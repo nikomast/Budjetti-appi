@@ -1,0 +1,14 @@
+/* AddLoan.css */
+.add-loan-form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .add-loan-form input {
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+
+  .add-loan-form button {
+    width: auto; /* Ensure the button doesn't take the whole div width */
+  }

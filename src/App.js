@@ -1,25 +1,45 @@
-import logo from './logo.svg';
-import './App.css';
+// App.js
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { AuthProvider, useAuth } from './context/AuthContext';
+import LoansPage from './components/Loans/LoansPage';
+import LoginPage from './components/Login';
+import PrivateRoute from './components/PrivateRoute';
+import NotFound from './components/NotFound';
+import Main from './components/Landing'
+import Budget from './components/Budget/Budget';
+import Header from './components/Header';
+import Footer from './components/Footer';
 
-function App() {
+const AppContent = () => {
+  const { loading, currentUser } = useAuth();
+
+  if (loading) {
+    return <div className="private-route-container"><div className="loading-message">Loading...</div></div>;  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      {currentUser && <Header />} {/* Only show Header when user is authenticated */}
+      <Routes>
+        <Route path="/" element={<LoginPage />} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/main" element={<PrivateRoute><Main /></PrivateRoute>} />
+        <Route path="/loans" element={<PrivateRoute><LoansPage /></PrivateRoute>} />
+        <Route path="/budget" element={<PrivateRoute><Budget /></PrivateRoute>} />
+        <Route path="*" element={<NotFound />} /> {/* Catch-all route for 404 */}
+      </Routes>
+    </>
   );
-}
+};
+
+const App = () => {
+  return (
+    <AuthProvider>
+      <Router>
+        <AppContent />
+      </Router>
+    </AuthProvider>
+  );
+};
 
 export default App;

@@ -1,0 +1,15 @@
+.add-income-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.add-income-form input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.add-income-form button {
+    width: auto; /* Ensure the button doesn't take the whole div width */
+}
