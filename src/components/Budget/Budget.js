@@ -124,18 +124,17 @@ const Budget = () => {
     <div className="main-container">
       <main className="main-content">
       <div className="IvsE">
-        <h3>Overview of Income's and Expense's</h3>
+        <h3>Budget Overview</h3>
         <IncomeExpenseChart budget={{...budget, loanPayments: [{ cost: totalLoanPayments }]}} incomes={incomes} />
       </div>
         <section className="income-section">
-          <h2>Your Incomes</h2>
+          <h3>Incomes</h3>
           <Incomes />
           <AddIncome onIncomeAdded={fetchBudget} />
         </section>
         <section className="budget-section">
-          <h2>Your Expenses</h2>
+          <h3>Expenses</h3>
           <div className="chart-section">
-            <h3>Expense Overview</h3>
             <ExpenseDistributionChart budget={{...budget, loanPayments: [{ cost: totalLoanPayments }]}} />
         </div>
           <div className="budget-summary">

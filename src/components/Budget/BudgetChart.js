@@ -10,7 +10,7 @@ const BudgetChart = ({ budget }) => {
     budget[category].reduce((total, expense) => total + expense.cost, 0)
   );
 
-  const incomeTotal = 1000; // Replace with dynamic income total
+  const incomeTotal = 1000;
   const expenseTotal = expenseData.reduce((total, amount) => total + amount, 0);
 
   const pieData = {

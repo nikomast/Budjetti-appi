@@ -2,6 +2,7 @@ import React from 'react';
 import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import { AuthProvider, useAuth } from './context/AuthContext';
 import LoansPage from './components/Loans/LoansPage';
+import History from './components/History/History'
 import LoginPage from './components/Login';
 import PrivateRoute from './components/PrivateRoute';
 import NotFound from './components/NotFound';
@@ -26,8 +27,10 @@ const AppContent = () => {
         <Route path="/main" element={<PrivateRoute><Main /></PrivateRoute>} />
         <Route path="/loans" element={<PrivateRoute><LoansPage /></PrivateRoute>} />
         <Route path="/budget" element={<PrivateRoute><Budget /></PrivateRoute>} />
+        {/*<Route path="/history" element={<PrivateRoute><History /></PrivateRoute>} />*/}
         <Route path="*" element={<NotFound />} /> {/* Catch-all route for 404 */}
       </Routes>
+      {currentUser && <Footer />}
     </>
   );
 };

@@ -10,7 +10,6 @@ import MonthlyExpensesChart from './Charts/MonthlyExpenses';
 import MonthlyBalancesChart from './Charts/MonthlyBalance';
 import { calculateLoanRepayment, calculateAvalancheRepayment } from '../../utils/Calculator';
 
-// Register Chart.js components
 Chart.register(...registerables);
 
 const LoanCalculator = () => {
@@ -21,7 +20,7 @@ const LoanCalculator = () => {
   const [monthlyAmount, setMonthlyAmount] = useState([]);
   const [notification, setNotification] = useState('');
   const [isOptimized, setIsOptimized] = useState(false);
-  const [userBudget, setUserBudget] = useState(''); // State for user-defined budget
+  const [userBudget, setUserBudget] = useState(''); 
 
   const fetchLoans = async () => {
     try {
@@ -55,13 +54,10 @@ const LoanCalculator = () => {
     if (loanData == null) {
       setNotification('Please calculate the normal repayment rate before optimization.');
     } else {
-      // Calculate the sum of all minimum payments
       const totalMinimumPayments = loans.reduce((sum, loan) => sum + loan.payment, 0);
   
-      // Initialize budget as the sum of all minimum payments
       let budget = totalMinimumPayments;
   
-      // Add user-defined budget if provided
       if (userBudget) {
         budget += Number(userBudget);
       }
@@ -88,7 +84,6 @@ const LoanCalculator = () => {
         optimizedMonthlyAmount.push(monthlyAmount);
       }
   
-      // Update each element of optimizedMonthlyExpenses to be equal to budget
       optimizedMonthlyExpenses.forEach((_, i) => {
         optimizedMonthlyExpenses[i] = budget;
       });
@@ -96,7 +91,7 @@ const LoanCalculator = () => {
       setLoanData(optimizedResult);
       setMonthlyExpenses(optimizedMonthlyExpenses);
       setMonthlyAmount(optimizedMonthlyAmount);
-      setIsOptimized(true); // Set optimization flag
+      setIsOptimized(true);
     }
   };
   

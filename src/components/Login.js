@@ -15,31 +15,26 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (isRegistering) {
-      // Registration process
       try {
         const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-        console.log('Registered:', userCredential);
+        //console.log('Registered:', userCredential);
 
-        // Send email verification
         await sendEmailVerification(userCredential.user);
         setMessage('Verification email sent. Please check your inbox.');
 
-        // Store additional user data in Firestore
         await setDoc(doc(db, 'users', userCredential.user.uid), {
           email: email,
           createdAt: new Date(),
-          // Add more fields as needed
         });
       } catch (error) {
         console.error('Error registering:', error);
         setMessage('Error registering. Please try again.');
       }
     } else {
-      // Login process
       try {
         const userCredential = await signInWithEmailAndPassword(auth, email, password);
         if (userCredential.user.emailVerified) {
-          console.log('Logged in:', userCredential);
+          //console.log('Logged in:', userCredential);
           setMessage('Logged in successfully.');
           navigate('/main');
         } else {

@@ -65,3 +65,11 @@ const IncomeExpenseChart = ({ budget, incomes }) => {
 };
 
 export default IncomeExpenseChart;
+
+
+/** I think firestore is enough for this project it's just a demo. 
+ * If i get interest on it then i will build it again on a different stack.
+ *  Now the page has loans and a budget page. 
+ * I was thinking that the data that is on those pages could represent a state that would be saved in to the "month" variable and those would be shown on the "history page".
+ *  The data on the history page would be modifiable and  in there the user could select the data from a specific month or information from the whole history.
+ *    */

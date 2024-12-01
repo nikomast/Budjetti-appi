@@ -22,6 +22,7 @@ const Header = () => {
       <nav>
         <Link to="/loans">Loans</Link>
         <Link to="/budget">Budget</Link>
+        {/*<Link to="/history">Archive</Link>*/}
         <Link to="/main">Home</Link>
         {currentUser && <button onClick={handleLogout}>Logout</button>}
       </nav>
