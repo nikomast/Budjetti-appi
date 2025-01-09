@@ -8,7 +8,7 @@ const PrivateRoute = ({ children }) => {
   const [user, loading, error] = useAuthState(auth);
 
   if (loading) {
-    return <div className="private-route-container"><div className="loading-message">Loading...</div></div>;
+    return <div className="private-route-container"><span>Loading...</span></div>;
   }
 
   if (error) {
