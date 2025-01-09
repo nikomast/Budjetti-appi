@@ -1,70 +1,39 @@
-# Getting Started with Create React App
+# Budget App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The Budget App is a simple yet effective tool designed to help users manage their finances. It allows users to track their incomes, expenses, and loan statuses while providing insights through easy-to-understand visualizations. This was one of the first apps I built with real utility, and its development process was relatively fast. Although the quick development timeline is evident in some areas, the app successfully fulfills its intended purpose.
 
-## Available Scripts
+## Key Features
+Income and Expense Tracking: Keep track of all incomes and expenses in one place.
 
-In the project directory, you can run:
+![Budget Overview](images/budgetOverview.png)
 
-### `npm start`
+Loan Management: View loan balances, monthly expenses, and the total cost of loans.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+![Loan payment](images/loanPayment.png)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Loan Simulation: Calculate loan prices at different payment rates and analyze repayment plans.
 
-### `npm test`
+![Loan cost](images/finalCost.png)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Budget Insights: Visualize budget data with clear, interactive graphs powered by Chart.js.
 
-### `npm run build`
+![Budget distribution](images/incomeDistribution.png)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Tech Stack
+Front-End Framework: React
+Hosting and Database: Google Firebase
+Firebase provides a simple database solution and user authentication, which allowed for rapid implementation without extensive coding.
+Visualization Library: Chart.js
+No additional libraries were used outside of those provided by Firebase.
+Development Insights
+This app was built with utility and speed in mind. React was my primary choice for development due to its simplicity and efficiency in building web applications. Hosting the app on Google Firebase proved to be a great decision, as it facilitated a seamless database solution and streamlined user authentication.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### While the app works as intended, there are areas for improvement:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Component Structure: The component hierarchy could be better organized for easier maintenance and scalability.
+Backend Integration: Currently, the app lacks a separate backend, making it less scalable. Adding a dedicated backend would significantly enhance its performance and structure.
+Code Refinement: Some parts of the codebase are not as modular or clean as they could be, with a few "spaghetti-like" structures that could benefit from refactoring.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+#### Lessons Learned
+Building this app taught me a lot about front-end development, state management, and integrating third-party tools like Firebase and Chart.js. It also gave me a deeper understanding of rapid development workflows and the trade-offs between speed and scalability.
